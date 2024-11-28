@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Estilos globais */
+html, body {
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+/* Container principal */
+.content {
+  display: flex;
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  
+}
+
+/* Formulário de cadastro */
+.formulario-cadastro {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px; /* Ajuste a largura máxima */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Espaço entre o formulário e a lista */
+  margin-right: 200px;
+}
+
+.lista-servicos {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px; /* Ajuste a largura máxima */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-right: 200px;
+}
+
+/* Títulos */
+.formulario-cadastro h2,
+.lista-servicos h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Botões */
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Botões alinhados com espaço entre */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-group button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #0056b3;
+}
+
+/* Mensagens */
+.mensagem {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  color: green;
+}
+
+/* Lista de serviços */
+.lista-servicos {
+  margin-top: 30px;
+}
+
+.quadro {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.quadro ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quadro li {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #555;
+}
+
+.quadro li:last-child {
+  border-bottom: none;
+}
+
+/* Mensagem para lista vazia */
+.mensagem-vazia {
+  color: #888;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 1023px) {
+  .formulario-cadastro {
+    padding: 30px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .formulario-cadastro {
+    padding: 20px;
+  }
+
+  .input-group label,
+  .input-group input {
+    font-size: 14px;
+  }
+
+  .button-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-cadastro {
+    padding: 15px;
+  }
+
+  .input-group label,
+  .input-group input {
+    font-size: 12px;
+  }
+
+  .button-group button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .quadro {
+    padding: 10px;
+  }
+
+  .quadro li {
+    font-size: 14px;
+  }
+}

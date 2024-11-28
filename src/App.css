@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+html, body {
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  flex-direction: column;
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 100%; /* Garante que ocupe toda a tela */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Impede a rolagem global */
+}
+
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.App {
+  display: flex;
+  overflow-y: auto;  /* Adiciona rolagem vertical */
+  height: 100vh; /* Garante que a altura ocupe toda a tela */
+}
+
+/* Sidebar */
+.sidebar {
+  overflow-y: auto;  /* Habilita rolagem na sidebar */
+  font-family: 'poppis';
+  width: 200px; /* Largura da sidebar aberta */
+  background-color: #3084d8;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  transition: width 0.3s ease; /* Transição suave de largura */
+  font-size:large;
+}
+
+.sidebar.closed {
+  width: 60px; /* Largura da sidebar fechada */
+}
+
+/* Botão de Toggle do menu */
+.menu-toggle {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar .menu-toggle i {
+  font-size: 24px;
+}
+
+/* Itens do menu */
+.menu-items {
+  list-style: none;
+  padding: 20px 10px;
+}
+
+.menu-items.hidden {
+  display: none; /* Oculta o menu quando necessário */
+}
+
+.menu-items li {
+  margin-bottom: 15px;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.sidebar.closed .menu-items li i {
+  margin-right: 0; /* Remove margem quando fechado */
+}
+
+.sidebar.closed .menu-items li span {
+  display: none; /* Oculta os textos dos itens quando a sidebar está fechada */
+}
+
+/* Topbar */
+.topbar {
+  font-family:'poppis' ;
+  font-size: 'Poppins',;
+  height: 50px;
+  background-color: #4a7eb3;
+  position: fixed;
+  top: 0;
+  left: 200px;
+  width: calc(100% - 200px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  transition: left 0.3s ease, width 0.3s ease; /* Transição suave da barra superior */
+  z-index: 1000; /* Garante que a topbar ficará sempre visível acima do conteúdo */
+}
+
+.topbar span {
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.topbar i {
+  font-size: 24px;
+  color: black;
+}
+
+.sidebar.closed ~ .topbar {
+  left: 60px; /* Ajusta a topbar quando a sidebar está fechada */
+  width: calc(100% - 60px); /* Reduz a largura conforme o tamanho da sidebar fechada */
+}
+
+/* Conteúdo principal */
+.content {
+  margin-top: 50px;
+  margin-left: 200px; /* Margem ajustada para a sidebar aberta */
+  background-color: #f5f5f5;
+  min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da tela */
+  padding: 20px;
+  transition: margin-left 0.3s ease; /* Transição suave de margem */
+  margin-bottom: auto;  
+  overflow-y: auto; /* Permite a rolagem vertical */
+}
+
+.content.sidebar-closed {
+  margin-left: 60px; /* Margem ajustada para a sidebar fechada */
+}
+
+/* Links do menu */
+.menu-items a {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items a:hover {
+  color: #474643; /* Mudança de cor no hover */
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  padding: 10px;
+}
+
+.logo-container img {
+  width: 40%;
+  transition: opacity 0.3s ease; /* Transição de opacidade para a logo */
+}
+
+.logo-container p {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: opacity 0.3s ease; /* Transição de opacidade para o texto */
+}
+
+.sidebar.closed .logo-container {
+  display: none; /* Oculta logo quando a sidebar está fechada */
+}
+
+/* Botão de Toggle do menu (repetido para reforçar a cor preta nos ícones) */
+.menu-toggle {
+  color: #000000;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li svg {
+  font-size: 24px; /* Aumente o valor conforme o tamanho que deseja */
+  margin-right: 10px;
+}
+
+.sidebar.closed .menu-items li svg {
+  font-size: 28px; /* Pode ser um tamanho maior se desejar um destaque maior quando a sidebar estiver fechada */
+  margin-right: 0;
+}
